@@ -41,6 +41,33 @@ declare -- HISTSIZE=10000
 # Set the maximum number of history entries saved in the history file
 declare -- SAVEHIST=10000
 
+# History file configuration
+declare -- HISTFILE=~/.zsh_history
+
+# Share history across multiple zsh sessions
+setopt SHARE_HISTORY
+
+# Append history to the history file (no overwriting)
+setopt APPEND_HISTORY
+
+# Save timestamp and duration of commands
+setopt EXTENDED_HISTORY
+
+# Add commands to history as they are typed, not at shell exit
+setopt INC_APPEND_HISTORY
+
+# Expire duplicates first
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Ignore duplicates when searching
+setopt HIST_FIND_NO_DUPS
+
+# Remove blank lines from history
+setopt HIST_REDUCE_BLANKS
+
+# Verify substitution before executing
+setopt HIST_VERIFY
+
 # Unbind the escape-/ binding to prevent interference with history search. This
 # binding is added by compinit and can cause issues when performing history
 # search with "/"
